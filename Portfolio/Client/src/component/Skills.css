@@ -1,0 +1,191 @@
+.skills-container {
+  min-height: 100vh;
+  padding: 60px 20px;
+  margin-top: 50px;
+  background: transparent;
+  text-align: center;
+  color: white;
+}
+
+/* Title */
+.skills-title {
+  font-size: 40px;
+  margin-bottom: 30px;
+  background: linear-gradient(90deg, #00d4ff, #ff00c8);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Tabs */
+.tabs {
+  margin-bottom: 30px;
+}
+
+.tab {
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: 0.3s;
+}
+
+.tab:hover {
+  background: #00d4ff;
+  color: black;
+}
+
+.tab.active {
+  background: linear-gradient(90deg, #00d4ff, #ff00c8);
+  color: black;
+}
+
+/* Grid */
+.skills-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+/* --- Frontend/Backend/Tools Cards (unchanged) --- */
+.skill-card {
+  width: 140px;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+
+.skill-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  padding: 2px;
+  background: linear-gradient(120deg, #00d4ff, #00ff9d, #ff00c8);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+}
+
+.skill-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.skill-card:hover img {
+  transform: rotate(10deg) scale(1.1);
+}
+
+.skill-card p {
+  font-size: 14px;
+}
+
+.sub-tabs {
+  margin-top: 10px;
+}
+
+.skill-card.soft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  height: 80px;
+}
+
+/* --- Certification Cards --- */
+.skill-card.certification {
+  width: 200px;        /* wider than normal card */
+  height: 240px;     /* fixed height for uniformity */
+  padding: 10px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skill-card.certification img {
+  width: 100%;
+  height: 120px;       /* control image height */
+  object-fit: cover;   /* cover card area without stretching */
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.skill-card.certification p {
+  font-weight: 600;
+  font-size: 14px;
+  margin: 5px 0 2px;
+}
+
+.skill-card.certification small {
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 5px;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal-content {
+  background: #111;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 500px;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.modal-content img {
+  width: 400px;
+  height: 200px;
+  border-radius: 5px;
+  padding-left: 35px;
+  margin-bottom: 1rem;
+}
+
+.close-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #00d4ff;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
