@@ -1,0 +1,86 @@
+/* Navbar background + blur */
+.custom-navbar {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 12px 20px;
+  transition: all 0.3s ease;
+}
+
+/* Brand styling */
+.brand-logo {
+  color: #fff;
+  font-weight: bold;
+  font-size: 22px;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.brand-logo:hover {
+  color: #00d4ff;
+  transform: scale(1.05);
+}
+
+/* Nav links */
+.nav-hover {
+  color: #ddd;
+  margin: 0 10px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.nav-hover:hover {
+  color: #00d4ff;
+  transform: translateY(-2px);
+}
+
+/* Underline animation */
+.nav-hover::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #00d4ff;
+  transition: 0.3s;
+}
+
+.nav-hover:hover::after {
+  width: 100%;
+}
+
+/* Active link */
+.nav-link.active {
+  color: #00d4ff !important;
+  font-weight: 500;
+}
+
+/* Mobile fix */
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: rgba(1, 6, 17, 0.8); /* glass effect */
+  backdrop-filter: blur(10px);
+
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  transition: 0.3s;
+}
+
+/* Shadow on scroll */
+.navbar.scrolled {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}

@@ -1,0 +1,167 @@
+/* Layout */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: transparent;
+}
+
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: -1;
+}
+
+/* Card */
+.hero-card {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Profile */
+.profile-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 4px solid #00d4ff;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.profile-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #00d4ff;
+}
+
+/* Name */
+.name {
+  font-size: 34px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* 🔥 Animated Gradient Role */
+.role-text {
+  font-size: 22px;
+  font-weight: 600;
+
+  background: linear-gradient(90deg, #00d4ff, #00ff9d, #ff00c8, #00d4ff);
+  background-size: 300%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+
+  /* animation: gradientFlow 4s linear infinite; */
+  transition: 0.4s;
+}
+
+/* Hover effect */
+.role-text:hover {
+  transform: scale(1.1);
+  letter-spacing: 1px;
+  text-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+}
+
+/* Underline animation */
+.role-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #00d4ff;
+  transition: 0.4s;
+}
+
+.role-text:hover::after {
+  width: 100%;
+  box-shadow: 0 0 10px #00d4ff;
+}
+
+/* Buttons */
+.buttons {
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.primary {
+  background: #00d4ff;
+  color: black;
+}
+
+.primary:hover {
+  background: white;
+  transform: translateY(-3px);
+}
+
+.secondary {
+  background: transparent;
+  border: 2px solid #00d4ff;
+  color: #00d4ff;
+}
+
+.secondary:hover {
+  background: #00d4ff;
+  color: black;
+  transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0%;
+  }
+
+  100% {
+    background-position: 300%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
